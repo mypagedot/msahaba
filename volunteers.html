@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found · Masjid As‑Sahabah</title>
+  <!-- Favicon -->
+  <link href="images/favicon_io (1)/favicon.ico" rel="icon">
+  <!-- Font Awesome 6 & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #1e2b2e;
+      background-color: #fafaf8;
+    }
+
+    :root {
+      --green-deep: #055c6b;
+      --green-soft: #067d92;
+      --gold: #c9a84b;
+      --cream: #f9f3e7;
+      --white: #ffffff;
+      --shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+      --card-shadow: 0 15px 35px -10px rgba(0, 40, 20, 0.15);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* navbar – same as original */
+    .navbar {
+      background-color: var(--white);
+      box-shadow: 0 4px 18px rgba(0, 40, 20, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green-deep);
+    }
+    .logo i {
+      font-size: 2rem;
+      color: var(--gold);
+    }
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      transition: all 0.3s ease;
+      align-items: center;
+    }
+
+    .nav-menu li a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e3a3a;
+      font-size: 1rem;
+      padding-bottom: 6px;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+      white-space: nowrap;
+    }
+    .nav-menu li a:hover {
+      border-bottom-color: var(--gold);
+      color: var(--green-deep);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background: white;
+      box-shadow: 0 12px 28px rgba(0, 30, 20, 0.15);
+      list-style: none;
+      padding: 14px 0;
+      border-radius: 20px;
+      min-width: 240px;
+      top: 100%;
+      left: 0;
+      border: 1px solid #e6ede9;
+      z-index: 1000;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 10px 22px;
+      border-bottom: none !important;
+      white-space: nowrap;
+      font-weight: 400;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f0f7f3;
+      color: var(--green-deep);
+    }
+
+    @media (min-width: 769px) {
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    }
+
+    .dropdown .fa-chevron-down {
+      font-size: 0.8rem;
+      margin-left: 5px;
+      transition: transform 0.2s;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      color: var(--green-deep);
+      cursor: pointer;
+    }
+
+    /* 404 specific styles */
+    .error-section {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .error-content {
+      max-width: 600px;
+    }
+
+    .error-code {
+      font-size: 8rem;
+      font-weight: 800;
+      color: var(--green-deep);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 10px 20px rgba(5, 92, 107, 0.1);
+    }
+
+    .error-code span {
+      color: var(--gold);
+    }
+
+    .error-title {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+    }
+
+    .error-message {
+      font-size: 1.2rem;
+      color: #4d655f;
+      margin-bottom: 2rem;
+    }
+
+    .error-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #0b3027;
+      padding: 14px 38px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+      border: 2px solid transparent;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .error-btn:hover {
+      background: transparent;
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    /* footer – same as original */
+    footer {
+      background: #0d332b;
+      color: #e0eae5;
+      padding: 56px 0 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: var(--gold);
+      margin-bottom: 24px;
+      font-size: 1.3rem;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 14px;
+    }
+    .footer-col ul li a {
+      color: #cadfd6;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .footer-col ul li a:hover {
+      color: var(--gold);
+    }
+    .footer-col ul li i {
+      margin-right: 12px;
+      color: var(--gold);
+    }
+    .social-icons {
+      display: flex;
+      gap: 20px;
+      font-size: 1.8rem;
+      margin-top: 20px;
+    }
+    .social-icons a {
+      color: var(--cream);
+      transition: 0.2s;
+    }
+    .social-icons a:hover {
+      color: var(--gold);
+    }
+
+    /* back to top – same */
+    .back-to-top {
+      text-align: center;
+      margin: 20px 0 10px;
+    }
+    @media (min-width: 769px) {
+      .back-to-top {
+        text-align: right;
+      }
+    }
+    .back-to-top a {
+      display: inline-block;
+      background: var(--gold);
+      color: #0b3027;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      border: 2px solid transparent;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+    .back-to-top a:hover {
+      background: transparent;
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid #2d5b4e;
+      font-size: 0.95rem;
+    }
+    .copyright a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .copyright a:hover {
+      color: var(--gold);
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0 30px;
+        box-shadow: 0 40px 40px -20px rgba(0,40,20,0.2);
+        border-radius: 0 0 30px 30px;
+        align-items: center;
+        gap: 1.4rem;
+      }
+      .nav-menu.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+      .dropdown.open .dropdown-menu {
+        display: block;
+        position: static;
+        box-shadow: none;
+        background: #f2f8f5;
+        width: 100%;
+        text-align: center;
+      }
+      .dropdown.open .dropdown-menu li a {
+        text-align: center;
+      }
+      .error-code {
+        font-size: 6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="images/favicon_io (1)/favicon-32x32.png" alt="Masjid As-Sahabah Logo">
+      <span>Masjid As‑Sahabah</span>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="itikaf.html">I'tikaf</a></li>
+      <li><a href="marriage.html">Marriage</a></li>
+      <li class="dropdown" id="resourcesDropdown">
+        <a href="#" id="resourcesLink">Resources <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html">About</a></li>
+          <li><a href="management.html">Management Board</a></li>
+          <li><a href="universities.html">Islamic Universities</a></li>
+          <li><a href="libraries.html" class="active">Islamic Libraries</a></li>   <!-- new active -->
+          <li><a href="volunteers.html">Volunteers & Testimonials</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donation.html">Donation</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- 404 MAIN CONTENT (replaces all original sections) -->
+<section class="error-section">
+  <div class="container error-content">
+    <div class="error-code">4<span>0</span>4</div>
+    <h1 class="error-title">Sorry, I am working on this page check it later</h1>
+    <p class="error-message">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+    <a href="index.html" class="error-btn"><i class="fas fa-home" style="margin-right: 8px;"></i> Return to homepage</a>
+  </div>
+</section>
+
+<!-- FOOTER (exactly as original, with minor text adaptation) -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Masjid As‑Sahabah</h4>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> No. 1 Habib Engineering Company, Murtala Muhammad way, Abuja FCT, Nigeria</li>
+          <li><i class="fas fa-phone"></i> +234 (0) 8032105658,<br>+234 (0) 8054547578</li>
+          <li><i class="fas fa-envelope"></i> masjidasahabah1@gmail.com</li>
+        </ul>
+          <div class="social-icons">
+          <a href="https://www.facebook.com/share/1C7QMhW131/"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.tiktok.com/@msahabah.maitama"><i class="fab fa-tiktok"></i></a>
+          <a href="https://youtube.com/@masjidussahaabah?si=VFdDbFuMYIUq2L8j"><i class="fab fa-youtube"></i></a>
+          <a href="https://chat.whatsapp.com/GHo3VbWVQzkCerCFjaTogk?mode=gi_t"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="itikaf.html">I'tikaf</a></li>
+          <li><a href="marriage.html">Marriage</a></li>
+          <li><a href="donation.html">Donation</a></li>
+          <li><a href="volunteers.html">Volunteer</a></li>
+        </ul>
+      </div>
+       <div class="footer-col">
+        <h4>eLearning</h4>
+        <ul>
+          <li><a href="universities.html">Universities</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="ramadan.html">Ramadan Activities</a></li>
+          <li><a href="scholars.html">Scholars</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Prayer times (summary)</h4>
+        <ul>
+          <li>Fajr 5:28</li>
+          <li>Dhuhr 12:34</li>
+          <li>Asr 15:52</li>
+          <li>Maghrib 18:27</li>
+          <li>Isha 19:49</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>© <span id="year"></span> Masjid As‑Sahabah, Maitama. All rights reserved. | Powered by: Rabiu S.M. (Aljauromanee) <a href="https://mypagedot.github.io/smrabiu/" target="_blank"><i>"A Mobile Software Engineer"</i></a></p>
+    </div>
+    <!-- Back to Top button -->
+    <div class="back-to-top">
+      <a href="#navbar" id="backToTop"><i class="fas fa-arrow-up"></i> Back to Top</a>
+    </div>
+  </div>
+</footer>
+
+<!-- SIMPLIFIED JAVASCRIPT (only mobile menu, year, back to top) -->
+<script>
+  (function() {
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const resourcesLink = document.getElementById('resourcesLink');
+    const dropdown = document.getElementById('resourcesDropdown');
+
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        const icon = hamburger.querySelector('i');
+        if (icon) {
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-times');
+        }
+      });
+    }
+
+    // Mobile dropdown toggle
+    if (resourcesLink && dropdown) {
+      resourcesLink.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdown.classList.toggle('open');
+          const caret = this.querySelector('.fa-chevron-down');
+          if (caret) {
+            caret.style.transform = dropdown.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0)';
+          }
+        } else {
+          e.preventDefault(); // prevent # on desktop if href="#"
+        }
+      });
+    }
+
+    // Close menu when a nav link is clicked (on mobile)
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (this.id === 'resourcesLink') return;
+        if (window.innerWidth <= 768) {
+          navMenu.classList.remove('active');
+          const icon = hamburger?.querySelector('i');
+          if (icon) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+          if (dropdown) dropdown.classList.remove('open');
+          const caret = resourcesLink?.querySelector('.fa-chevron-down');
+          if (caret) caret.style.transform = 'rotate(0)';
+        }
+      });
+    });
+
+    // Back to top smooth scroll
+    document.getElementById('backToTop')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+  })();
+</script>
+<style>
+  /* ensure dropdown arrow rotates only when open */
+  .dropdown.open .fa-chevron-down {
+    transform: rotate(180deg);
+  }
+</style>
+</body>
+</html>
